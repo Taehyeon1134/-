@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands
 
 intents = discord.Intents.all()
@@ -14,6 +15,6 @@ async def 환영(ctx, member: discord.Member):
 @bot.command()
 async def 늅(ctx, member: discord.Member):
     await ctx.send(f'{member.mention}, 적응이 힘드시다면 백서아 멘션 부탁드려요.')
-
-bot.run('token')
+access_token = os.environ('BOT_TOKEN')
+bot.run(access_token)
 
